@@ -1,0 +1,31 @@
+import java.awt.Desktop;
+import java.net.URI;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Desktop desktop = Desktop.getDesktop();
+
+        String ytURL = "https://youtu.be/dQw4w9WgXcQ?si=xtRRucY3g80qkxMg";
+
+        try {
+                desktop.browse(new URI(ytURL));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Are you Ready?..... 1 = YES || 2 = NO");
+        int ready = input.nextInt();
+
+        if (ready == 1) {
+            try {
+                for (int i = 0; i < 1; i--) {
+                    desktop.browse(new URI(ytURL));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
